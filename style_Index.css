@@ -1,0 +1,277 @@
+body, html {
+    background-color: #ECF5FF;
+    transform: scale(1.5); /* 将页面缩放为原来的50% (100% / 200%) */
+    transform-origin: 0 0; /* 设置缩放的原点为页面的左上角 */
+    position: relative;
+    width:1440px;
+    height:1024px;
+    left:-230px;
+    top: -20px;
+    
+}
+/*容器背景*/
+.container-wrapper {
+  display: flex;
+  justify-content: space-around; /* 平行置中 */
+  margin: 50px auto; /* 上下间距 50px，水平居中 */
+  width: 1440px; /* 或者与您的页面宽度相同 */
+}
+
+.container1 {
+  position: relative;
+  width: 540px; /*400x600像素的背景*/
+  height: 230px;
+  background-color: black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  margin-top: 80px; /* 左侧间距 */
+  margin-left: 50px; /* 左侧间距 */
+  margin-right: 50px; /* 右侧间距 */
+}
+
+.PianoName p {
+  margin-left: 30px;
+  margin-top: -5px;
+  text-align: start;
+  font-family:Microsoft JhengHei;
+}
+/*-----------------------拖曳音量-------------------------*/
+.player__slider {
+  position: relative; 
+  width: 100px; /*400x600像素的背景*/
+  height: 8px;
+  top:-38px;
+  margin-left: 215px;
+}
+
+/*-----------------------開關鍵--------------------------*/
+.box1 input{
+	display: none;
+}
+.box1 label{
+	display: block;
+	width: 30px;
+	height: 15px;
+	background-color: #5B5B5B;
+	border-radius: 14px;
+	position: relative;
+	cursor: pointer;
+}
+	.box1 label::after{
+	content: "";
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	background-color: #fff;
+	border-radius: 50%;
+	left: 2px;
+	top: 1px;
+	transition: all 0.1s;
+}
+/*input选中后的样式*/
+.box1 input:checked + label{
+	background-color: rgb(9, 224, 99);
+}
+.box1 input:checked + label::after{
+	left: 15px;
+}
+/*-----------------------播放鍵-------------------------*/
+/* 默认状态下的样式 */
+.play-button {
+  position: relative; 
+  top:-33px;
+  margin-left: 100px;
+  width: 20px; /* 按钮宽度 */
+  height: 20px; /* 按钮高度 */
+  background-color: #ccc; /* 按钮背景颜色 */
+  cursor: pointer; /* 鼠标指针样式 */
+  display: inline-block; /* 使按钮成为行内块元素 */
+  border-radius: 8px;
+  transition: transform 0.1s ease; /* 添加过渡效果 */
+}
+
+/* 被点击时的样式 */
+.play-button.clicked {
+  background-color: rgb(9, 224, 99);
+}
+
+/* 图标样式 */
+.play-button img {
+  margin-left: 3px;
+  margin-top: 2px;
+  height: 15px;
+}
+
+/*-----------------------清除鍵-------------------------*/
+.clear-button {
+  position: relative; 
+  top:-56px;
+  margin-left: 450px;
+  width: 55px; /* 按钮宽度 */
+  height: 20px; /* 按钮高度 */
+  background-color: #ccc; /* 按钮背景颜色 */
+  cursor: pointer; /* 鼠标指针样式 */
+  display: inline-block; /* 使按钮成为行内块元素 */
+  border-radius: 8px;
+}
+
+/* 被点击时的样式 */
+.clear-button.clicked {
+  background-color: rgb(9, 224, 99);
+}
+
+.clear-button p {
+  position: relative;
+  margin-left: 8px;
+  top:3px;
+  text-align: left;
+  font-family:Microsoft JhengHei;
+} 
+/*---------------------黑鍵白鍵-------------------*/
+/* 钢琴键盘容器样式 */
+.keyboard {
+  display: flex; /* 使用 Flexbox 布局 */
+  margin-top: 2px; /* 上边距 */
+}
+
+/* 白键样式 */
+.white-key {
+  position: relative;
+  z-index: 1;
+  top:  -45px; 
+  left: 50px; 
+  width: 40px; /* 白键宽度 */
+  height: 150px; /* 白键高度 */
+  background-color: white; /* 白键颜色 */
+  border: 1px solid black; /* 边框样式 */
+  border-radius: 5px; /* 圆角 */
+}
+
+/* 黑键样式 */
+.black-key-1 {
+  position: absolute;
+  z-index: 2;
+  top:  67px; 
+  left: 75px;
+  width: 30px; /* 黑键宽度 */
+  height: 100px; /* 黑键高度 */
+  background-color: 	#272727; /* 黑键颜色 */
+  border: 1px solid black; /* 边框样式 */
+  border-radius: 3px; /* 圆角 */
+}
+
+.black-key-2 {
+  position: absolute;
+  z-index: 2;
+  top:  67px;  
+  left: 118px; /*118-75 = 43*/
+  width: 30px; /* 黑键宽度 */
+  height: 100px; /* 黑键高度 */
+  background-color: 	#272727; /* 黑键颜色 */
+  border: 1px solid black; /* 边框样式 */
+  border-radius: 3px; /* 圆角 */
+}
+
+.black-key-3 {
+  position: absolute;
+  z-index: 2;
+  top:  67px;  
+  left: 202px;
+  width: 30px; /* 黑键宽度 */
+  height: 100px; /* 黑键高度 */
+  background-color: 	#272727; /* 黑键颜色 */
+  border: 1px solid black; /* 边框样式 */
+  border-radius: 3px; /* 圆角 */
+}
+
+.black-key-4 {
+  position: absolute;
+  z-index: 2;
+  top:  67px;  
+  left: 243px;
+  width: 30px; /* 黑键宽度 */
+  height: 100px; /* 黑键高度 */
+  background-color: 	#272727; /* 黑键颜色 */
+  border: 1px solid black; /* 边框样式 */
+  border-radius: 3px; /* 圆角 */
+}
+
+.black-key-5 {
+  position: absolute;
+  z-index: 2;
+  top:  67px;  
+  left: 285px;
+  width: 30px; /* 黑键宽度 */
+  height: 100px; /* 黑键高度 */
+  background-color: 	#272727; /* 黑键颜色 */
+  border: 1px solid black; /* 边框样式 */
+  border-radius: 3px; /* 圆角 */
+}
+
+.black-key-6 {
+  position: absolute;
+  z-index: 2;
+  top:  67px;  
+  left: 369px;
+  width: 30px; /* 黑键宽度 */
+  height: 100px; /* 黑键高度 */
+  background-color: 	#272727; /* 黑键颜色 */
+  border: 1px solid black; /* 边框样式 */
+  border-radius: 3px; /* 圆角 */
+}
+
+.black-key-7 {
+  position: absolute;
+  z-index: 2;
+  top:  67px;  
+  left: 410px;
+  width: 30px; /* 黑键宽度 */
+  height: 100px; /* 黑键高度 */
+  background-color: 	#272727; /* 黑键颜色 */
+  border: 1px solid black; /* 边框样式 */
+  border-radius: 3px; /* 圆角 */
+}
+
+
+.white-key:active,
+.white-key.active {
+  background-color: #E0E0E0 !important; /* 点击时变浅灰色 */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* 模拟自然阴影效果 */
+}
+
+/* 初始状态下隐藏 ::after 伪元素 */
+.white-key::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 100%; /* 负值将其隐藏在白键右侧 */
+  width: 10px; /* 边缘宽度 */
+  height: 100%;
+  background: linear-gradient(to left, rgba(0,0,0,0.2), transparent); /* 从右到左的渐变 */
+  transition: right 0s; /* 添加过渡效果 */
+}
+
+/* 点击白键时，调整 ::after 的位置以显示边缘渐变 */
+.white-key:active::after,
+.white-key.active::after {
+  right: 0; /* 将右偏移设为0，使 ::after 可见 */
+  transition: right 0s; /* 添加过渡效果 */
+}
+
+
+/* 黑键点击时修改背景颜色和添加内阴影 */
+.black-key-1.active,
+.black-key-2.active,
+.black-key-3.active,
+.black-key-4.active,
+.black-key-5.active,
+.black-key-6.active,
+.black-key-7.active {
+  background-color: #404040; /* 修改背景颜色 */
+  box-shadow: inset 0 30px 30px -15px rgba(0, 0, 0, 0.7); /* 添加内阴影 */
+}
+
+
+

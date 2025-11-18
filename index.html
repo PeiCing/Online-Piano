@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作業二_鋼琴</title>
+    <link rel="stylesheet" href="style_Index.css">
+    <script src="script.js" defer></script> <!-- 引入 JavaScript 文件 -->
+</head>
+<body>      
+    <main>
+        <div class="container-wrapper">
+            <div class="container1">
+                <!--鋼琴名稱、功能名稱、功能拖曳、功能鍵-->
+                <div>
+                    <div class="PianoName">
+                        <p>
+                            <span style="color: #D0D0D0; font-size: 15pt;"><b>HW2 PIANO</b></span>
+                            <span style="color: #D0D0D0; font-size: 8pt;margin-left: 15px;"><b>Volume</b></span>
+                            <span style="color: #D0D0D0; font-size: 8pt;margin-left: 120px;"><b>Record</b></span>
+                            <!--錄製_開關鍵-->
+                            <span style="color: #D0D0D0; margin-left: 170px;"class="box1">
+                                <input type="checkbox" name="first" id="btn1">
+                                <label for="btn1" style="margin-top: -16px;margin-left: 350px;"></label>
+                            </span>
+                        </p>
+                            <!-- 音量_滑動條 -->
+                            <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="0.5" onchange="adjustVolume(this.value)"> 
+                            <!--播放_開關鍵-->
+                            <div class="play-button">
+                                <img src="pic/play.png" ></img>
+                            </div>
+                            <!--清空_開關鍵-->
+                            <div class="clear-button">
+                                <p><b>clear</b></p>
+                            </div>                            
+                    </div>
+                    <!-- 钢琴键盘容器 -->
+                    <div class="keyboard">
+                        <!-- 白键 -->
+                        <div class="white-key" data-key="a" data-src="tunes/a.wav"><p style="position:absolute; color:gray;left:15px;top:105px;font-family:sans-serif;">a</p></div>
+                        <div class="white-key" data-key="s" data-src="tunes/s.wav"><p style="position:absolute; color:gray;left:15px;top:105px;font-family:sans-serif;">s</p></div>
+                        <div class="white-key" data-key="d" data-src="tunes/d.wav"><p style="position:absolute; color:gray;left:15px;top:105px;font-family:sans-serif;">d</p></div>
+                        <div class="white-key" data-key="f" data-src="tunes/f.wav"><p style="position:absolute; color:gray;left:15px;top:105px;font-family:sans-serif;">f</p></div>
+                        <div class="white-key" data-key="g" data-src="tunes/g.wav"><p style="position:absolute; color:gray;left:15px;top:105px;font-family:sans-serif;">g</p></div>
+                        <div class="white-key" data-key="h" data-src="tunes/h.wav"><p style="position:absolute; color:gray;left:15px;top:105px;font-family:sans-serif;">h</p></div>
+                        <div class="white-key" data-key="j" data-src="tunes/j.wav"><p style="position:absolute; color:gray;left:15px;top:105px;font-family:sans-serif;">j</p></div>
+                        <div class="white-key" data-key="k" data-src="tunes/k.wav"><p style="position:absolute; color:gray;left:15px;top:105px;font-family:sans-serif;">k</p></div>
+                        <div class="white-key" data-key="l" data-src="tunes/l.wav"><p style="position:absolute; color:gray;left:15px;top:105px;font-family:sans-serif;">l</p></div>
+                        <div class="white-key" data-key=";" data-src="tunes/;.wav"><p style="position:absolute; color:gray;left:15px;top:105px;font-family:sans-serif;">;</p></div>
+
+                        <!-- 黑键 -->
+                        <div class="black-key-1" data-key="w" data-src="tunes/w.wav"><p style="position:absolute; color:gray;left:9px;top:58px;font-family:sans-serif;">w</p></div>
+                        <div class="black-key-2" data-key="e" data-src="tunes/e.wav"><p style="position:absolute; color:gray;left:10px;top:58px;font-family:sans-serif;">e</p></div>
+                        <div class="black-key-3" data-key="t" data-src="tunes/t.wav"><p style="position:absolute; color:gray;left:12px;top:58px;font-family:sans-serif;">t</p></div>
+                        <div class="black-key-4" data-key="y" data-src="tunes/y.wav"><p style="position:absolute; color:gray;left:12px;top:58px;font-family:sans-serif;">y</p></div>
+                        <div class="black-key-5" data-key="u" data-src="tunes/u.wav"><p style="position:absolute; color:gray;left:12px;top:58px;font-family:sans-serif;">u</p></div>
+                        <div class="black-key-6" data-key="o" data-src="tunes/o.wav"><p style="position:absolute; color:gray;left:12px;top:58px;font-family:sans-serif;">o</p></div>
+                        <div class="black-key-7" data-key="p" data-src="tunes/p.wav"><p style="position:absolute; color:gray;left:12px;top:58px;font-family:sans-serif;">p</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </main>
+</body>
+</html>
